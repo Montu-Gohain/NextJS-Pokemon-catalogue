@@ -26,7 +26,7 @@ export default function Home() {
           type='image/x-icon'
           href='https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KAOmqplghJT2PrJlOgZ5.png?auto=format'></link>
       </Head>
-      <h1>Pokemon List</h1>
+      <h1 className={styles.header_title}>Pokemon List</h1>
       <div className={styles.grid}>
         {pokemon.map((pokemon) => (
           <div className={styles.card} key={pokemon.id}>
