@@ -3,20 +3,19 @@ import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function Home() {
-  const [pokemon, setPokemon] = useState([]);
+export async function getStaticProps() {
+  const resp = await fetch(
+    "https://jherr-pokemon.s3-us-west-1.amazonaws.com/index.json"
+  );
 
-  useEffect(() => {
-    async function getPokemon() {
-      const resp = await fetch(
-        "https://jherr-pokemon.s3-us-west-1.amazonaws.com/index.json"
-      );
+  return {
+    props: {
+      pokemon: await resp.json(),
+    },
+  };
+}
 
-      setPokemon(await resp.json());
-    }
-    getPokemon();
-  }, []);
-
+export default function HOMESSG({ pokemon }) {
   return (
     <div className={styles.main}>
       <Head>
@@ -27,16 +26,16 @@ export default function Home() {
           href='https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/KAOmqplghJT2PrJlOgZ5.png?auto=format'></link>
       </Head>
       <header className={styles.heading}>
-        <h1 id={styles.csr_title} className={styles.header_title}>
-          Pokemon List in CSR
+        <h1 id={styles.ssg_title} className={styles.header_title}>
+          Pokemon List in SSG
         </h1>
-        <button className={styles.btnssr}>
-          <Link href='/indexSSR' className={styles.links}>
-            SSR
+        <button className={styles.btncsr}>
+          <Link href='/' className={styles.links}>
+            CSR
           </Link>
         </button>
         <button className={styles.btnssg}>
-          <Link href='/indexSSG' className={styles.links}>
+          <Link href='/indexSSR' className={styles.links}>
             SSG
           </Link>
         </button>

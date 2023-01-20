@@ -35,7 +35,7 @@ export default function HOMESSR({ pokemon }) {
           </Link>
         </button>
         <button className={styles.btnssg}>
-          <Link href='/indexSSR' className={styles.links}>
+          <Link href='/indexSSG' className={styles.links}>
             SSG
           </Link>
         </button>

@@ -67,13 +67,14 @@
   border-radius: 10px;
 }
 #csr_title {
-  background-color: #01e37f;
+  background-color: #62e3c6;
 }
 #ssr_title {
-  background-color: #cce5e5;
+  background-color: yellow;
 }
 #ssg_title {
-  background-color: #e4eaef;
+  background-color: #7b53df;
+  color: white;
 }
 .btncsr {
   padding: 10px;
