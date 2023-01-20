@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-color: aquamarine;
+  background-color: #334456;
   padding: 10px;
 }
 .grid {
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin: 3px;
+  margin: 6px;
   border: 0.8px solid rgba(200, 196, 196, 0.206);
   border-radius: 10px;
   font-size: 20px;
@@ -34,8 +34,9 @@
   object-fit: contain;
   transition-duration: 500ms;
   transition-timing-function: ease-in;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
 }
 .link_container {
   display: flex;
@@ -57,4 +58,11 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: gray;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 395px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
 }
